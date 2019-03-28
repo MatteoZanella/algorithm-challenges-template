@@ -1,0 +1,20 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.7180385" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="RD.Init.Cfg.2" value="true" />
+    <property name="RD.Init.DialogShown.Ide" value="true" />
+    <property name="SettingsSearchHistory" value="git&#10;reformat&#10;.net fra" />
+    <property name="evlsprt3.183" value="15" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/Documents/Development/AlgorithmChallengesTemplate/AlgorithmChallengesTemplate.sln&#10;C:/Users/matte/Documents/Development&#10;C:/Users/matte/Documents/Development/reply-challenge-2019/ReplyCodeChallenge2019.sln&#10;C:/Users/matte/Documents/Development/reply-challenge-2019" />
+    <property name="ignoreUltimateEdition" value="true" />
+    <property name="last_open_solution_path" value="$USER_HOME$/Documents/Development/AlgorithmChallengesTemplate" />
+    <property name="last_selected_template" value="Console Application|.NET Core" />
+    <property name="last_selected_template_parameters" value="Type=xUnit;Language=C#;Platform=Xamarin Forms;TargetIOSAPI=12.1;Code Sharing Strategy=.NET Standard;Framework=netcoreapp3.0;" />
+    <property name="settings.code.style.selected.tab.C#" value="Tabs, Indents, Alignment" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.2.1" />
+  </component>
+</application>
