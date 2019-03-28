@@ -2,7 +2,7 @@
   "profiles": {
     "AlgorithmChallengesTemplate": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\Giulio\\Source\\GitHub\\algorithm-challenges-template\\AlgorithmChallengesTemplate"
+      "workingDirectory": "$(SolutionDir)/$(SolutionName)"
     }
   }
 }
