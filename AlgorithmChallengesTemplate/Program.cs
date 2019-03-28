@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Threading;
 using System.IO;
+using System.Threading;
 
 namespace AlgorithmChallengesTemplate {
-   struct Example {
-      int Points;
+   internal struct Example {
+      private int Points;
+
       public Example(int points) {
          Points = points;
       }
@@ -24,12 +25,12 @@ namespace AlgorithmChallengesTemplate {
          var streamReader = new StreamReader($"./in/{inputName}.txt");
          var firstLine = streamReader.ReadLine();
          streamReader.Close();
-        
+
          //CODE
          /*
           * Bla bla bla bla
           */
-         
+
          //OUTPUT
          using (var streamWriter = new StreamWriter($"./out/{inputName}.txt")) {
             streamWriter.WriteLine(firstLine + " elaborato con successo");
