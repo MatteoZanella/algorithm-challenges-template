@@ -25,10 +25,10 @@ namespace AlgorithmChallengesTemplate
             #endif
 
             const string inputNames = "a b c";
-            foreach (string input in inputNames.Split(" "))
+            foreach (var input in inputNames.Split(" "))
             {
-                string name = input;
-                Thread newThread = new Thread(() => Run(name));
+                var name = input;
+                var newThread = new Thread(() => Run(name));
                 newThread.Start();
             }
             #if DEBUG
@@ -40,7 +40,7 @@ namespace AlgorithmChallengesTemplate
         private static void Run(string inputName)
         {
             //INPUT
-            var streamReader = new StreamReader($"./in/{inputName}.txt");
+            var streamReader = new StreamReader($"$./in/{inputName}.txt");
             var firstLine = streamReader.ReadLine();
             streamReader.Close();
 
