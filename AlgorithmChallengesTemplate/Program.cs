@@ -28,10 +28,12 @@ namespace AlgorithmChallengesTemplate {
 
          //CODE
          /*
-          * Bla bla bla bla
-          */
-
+         * Bla bla bla bla
+         */
          //OUTPUT
+
+         if (!Directory.Exists("./out"))
+            Directory.CreateDirectory("./out");
          using (var streamWriter = new StreamWriter($"./out/{inputName}.txt")) {
             streamWriter.WriteLine(firstLine + " elaborato con successo");
          }
