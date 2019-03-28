@@ -2,43 +2,62 @@
 using System.IO;
 using System.Threading;
 
-namespace AlgorithmChallengesTemplate {
-   internal struct Example {
-      private int Points;
+namespace AlgorithmChallengesTemplate
+{
+    internal struct Example
+    {
+        private int Points;
 
-      public Example(int points) {
-         Points = points;
-      }
-   }
+        public Example(int points)
+        {
+            Points = points;
+        }
+    }
 
-   internal static class Program {
-      private static void Main() {
-         const string inputNames = "a b c";
-         foreach (var inputName in inputNames.Split(" ")) {
-            var newThread = new Thread(() => Run(inputName));
-            newThread.Start();
-         }
-      }
+    internal static class Program
+    {
+        private static void Main()
+        {
+            #if DEBUG
+                Console.WriteLine("Sei in debug");
+            #else
+                Console.WriteLine("Non sei in debug");
+            #endif
 
-      private static void Run(string inputName) {
-         //INPUT
-         var streamReader = new StreamReader($"./in/{inputName}.txt");
-         var firstLine = streamReader.ReadLine();
-         streamReader.Close();
+            const string inputNames = "a b c";
+            foreach (string input in inputNames.Split(" "))
+            {
+                string name = input;
+                Thread newThread = new Thread(() => Run(name));
+                newThread.Start();
+            }
+            #if DEBUG
+                Console.ReadKey();
+            #endif
 
-         //CODE
-         /*
-         * Bla bla bla bla
-         */
-         //OUTPUT
+        }
 
-         if (!Directory.Exists("./out"))
-            Directory.CreateDirectory("./out");
-         using (var streamWriter = new StreamWriter($"./out/{inputName}.txt")) {
-            streamWriter.WriteLine(firstLine + " elaborato con successo");
-         }
+        private static void Run(string inputName)
+        {
+            //INPUT
+            var streamReader = new StreamReader($"./in/{inputName}.txt");
+            var firstLine = streamReader.ReadLine();
+            streamReader.Close();
 
-         Console.WriteLine("Termine esecuzione per input " + inputName);
-      }
-   }
+            //CODE
+            /*
+            * Bla bla bla bla
+            */
+            //OUTPUT
+
+            if (!Directory.Exists("./out"))
+                Directory.CreateDirectory("./out");
+            using (var streamWriter = new StreamWriter($"./out/{inputName}.txt"))
+            {
+                streamWriter.WriteLine(firstLine + " elaborato con successo");
+            }
+
+            Console.WriteLine("Termine esecuzione per input " + inputName);
+        }
+    }
 }
