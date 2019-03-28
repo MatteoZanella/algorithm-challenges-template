@@ -40,7 +40,7 @@ namespace AlgorithmChallengesTemplate
         private static void Run(string inputName)
         {
             //INPUT
-            var streamReader = new StreamReader($"$./in/{inputName}.txt");
+            var streamReader = new StreamReader($"./in/{inputName}.txt");
             var firstLine = streamReader.ReadLine();
             streamReader.Close();
 
