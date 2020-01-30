@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AlgorithmChallengesTemplate": {
+      "commandName": "Project",
+      "workingDirectory": "$(SolutionDir)/$(SolutionName)"
+    }
+  }
+}
