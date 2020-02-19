@@ -1,63 +1,46 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Threading;
 
-namespace AlgorithmChallengesTemplate
-{
-    internal struct Example
-    {
-        private int Points;
+namespace AlgorithmChallengesTemplate {
+   internal static class Program {
+      private static void Run(string inputName) {
+         //INPUT
+         using (var streamReader = new StreamReader($"./in/{inputName}.txt")) {
+            var line = streamReader.ReadLine();
+         }
+         //CODE
+         /*
+         * Bla bla bla bla
+         */
+         //OUTPUT
 
-        public Example(int points)
-        {
-            Points = points;
-        }
-    }
+         if (!Directory.Exists("./out")) Directory.CreateDirectory("./out");
+         using (var streamWriter = new StreamWriter($"./out/{inputName}.txt")) {
+            streamWriter.WriteLine($"{inputName} solution! :)");
+            //streamWriter.WriteLine($"\t Scoring measure: {scoring}");
+         }
 
-    internal static class Program
-    {
-        private static void Main()
-        {
-            #if DEBUG
-                Console.WriteLine("Sei in debug");
-            #else
-                Console.WriteLine("Non sei in debug");
-            #endif
+         Console.Out.WriteLine($"{inputName} executed ☑");
+      }
 
-            const string inputNames = "a b c";
-            foreach (var input in inputNames.Split(" "))
-            {
-                var name = input;
-                var newThread = new Thread(() => Run(name));
-                newThread.Start();
-            }
-            #if DEBUG
-                Console.ReadKey();
-            #endif
+      private static void Main() {
+         var inputNames = new[] {"a", "b", "c"};
+         var threads = new Thread[inputNames.Length];
+         for (var i = 0; i < inputNames.Length; ++i) {
+            var name = inputNames[i];
+            threads[i] = new Thread(() => Run(name));
+            threads[i].Start();
+         }
 
-        }
+         Console.Out.WriteLine("Threads started...");
+         foreach (var thread in threads) {
+            thread.Join();
+         }
 
-        private static void Run(string inputName)
-        {
-            //INPUT
-            var streamReader = new StreamReader($"./in/{inputName}.txt");
-            var firstLine = streamReader.ReadLine();
-            streamReader.Close();
-
-            //CODE
-            /*
-            * Bla bla bla bla
-            */
-            //OUTPUT
-
-            if (!Directory.Exists("./out"))
-                Directory.CreateDirectory("./out");
-            using (var streamWriter = new StreamWriter($"./out/{inputName}.txt"))
-            {
-                streamWriter.WriteLine(firstLine + " elaborato con successo");
-            }
-
-            Console.WriteLine("Termine esecuzione per input " + inputName);
-        }
-    }
+         Console.Out.WriteLine("Threads executed!");
+         Console.ReadKey();
+      }
+   }
 }
